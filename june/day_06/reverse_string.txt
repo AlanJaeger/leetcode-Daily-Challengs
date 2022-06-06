@@ -1,0 +1,37 @@
+Write a function that reverses a string. The input string is given as an array of characters s.
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+Example 1:
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+
+Example 2:
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+
+annotations:
+ - An in-place algorithm means you can't create a copy of that list while sorting/changing it. You must reorder it without creating another.
+ - What you must do:
+   - create two control variables, could be LEFT and RIGHT. Left will be at beggining of array and Rigth will be the last position -1 to get the last position.
+   - You can stop in two conditionals, when?
+     - when Left its equal Rigth, example:
+    		["h","e","l","l","o"] = CHANGE 'h' with 'o'
+		  1               5
+		["o","l","l","e","h"] = CHANGE 'e' with 'l'
+		      2       4
+		["o","l","l","e","h"] = Now they are equal, so you can stop.
+		          3
+                          3
+        
+     - when Left, its great or equal Right, example:
+    		["h","e","l","b","o","s"] = CHANGE 'h' with 's'
+		  1                   6
+		["s","o","l","b","e","h"] = CHANGE 'e' with 'o'
+		      2           5
+		["s","o","b","l","e","h"] = CHANGE 'l' with 'b'. As you can see, in the next interation, Left will be "4" and Right will be "3", so you cant stop.
+		          3   4
+        
+        
+        
+        
+      
