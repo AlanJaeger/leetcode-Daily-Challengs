@@ -1,0 +1,54 @@
+There is a malfunctioning keyboard where some letter keys do not work. All other keys on the keyboard work properly.
+
+Given a string text of words separated by a single space (no leading or trailing spaces) 
+and a string brokenLetters of all distinct letter keys that are broken, return the number 
+of words in text you can fully type using this keyboard.
+
+Example 1:
+Input: text = "hello world", brokenLetters = "ad"
+Output: 1
+Explanation: We cannot type "world" because the 'd' key is broken.
+
+Example 2:
+Input: text = "leet code", brokenLetters = "lt"
+Output: 1
+Explanation: We cannot type "leet" because the 'l' and 't' keys are broken.
+
+Example 3:
+Input: text = "leet code", brokenLetters = "e"
+Output: 0
+Explanation: We cannot type either word because the 'e' key is broken.
+
+
+annotations:
+   - In this question we need to run through the "words" string and "brokenLetters" string.
+     when whe found some letter from brokeLetters in words, whe can use a break steatment 
+     to stop the loop and go for the next interation because that word cant be write anymore.
+     We also can use a iterator variable, to count how many words can be writed.
+
+     for example:
+	word = "hello world"
+	term = "ad"
+
+	#counter start in zero.
+        counter = 0
+
+ 	# we run through the word string, which in first case will be "hello". We are using split() method
+	# to separated the two strings from the variable "word".
+        for word in text.split():
+	    
+	    # now, when run through the term string, which in the first case, will be "a".
+            for letter in brokenLetters:
+
+		# if exists "a" in hello, the second loop will stop because the break steatment. if not, the second loop runs again with
+	        # now looking for letter "d" in hello. There is no "a" or "d" in hello, so the loop finishs
+	        # and return to first loop, now using the word "world" to make the verifications.
+                if letter in word:
+                    break
+	    
+	    # if the code never fall in that if, the code runs that else statemant, incrementing the counter variable.
+            else:
+                counter+=1
+
+	# and now we return the counter to see how many word we can write.
+        return counter
