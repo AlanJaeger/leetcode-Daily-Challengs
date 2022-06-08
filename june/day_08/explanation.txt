@@ -1,0 +1,29 @@
+Given an array nums of integers, return how many of them contain an even number of digits.
+
+Example 1:
+Input: nums = [12,345,2,6,7896]
+Output: 2
+Explanation: 
+12 contains 2 digits (even number of digits). 
+345 contains 3 digits (odd number of digits). 
+2 contains 1 digit (odd number of digits). 
+6 contains 1 digit (odd number of digits). 
+7896 contains 4 digits (even number of digits). 
+Therefore only 12 and 7896 contain an even number of digits.
+
+annotations:
+   - In that question, we need to discover how many of them contain an even number of digits.
+     example: 12 has 2 digits, he is even.
+
+   - We cant use len() to discover the quantity of digits in a int variable, but wen can use in a string.
+     So, to resolve that question, we can turn this digits is a string and use len in each number to
+     calculate, if module of len in a digit its 0, the number of the digit its even.
+     
+     number = 12
+     counter = 0
+     example:
+       - val = len(str(number)). Now that we have len() value, we can use module to calculate.
+         if val % 2 == 0 we increment counter variable and return that variable. And that's it.
+
+       - in my exercise, i use else and continue steatmant to speed my code.
+         
